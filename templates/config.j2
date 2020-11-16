@@ -8,14 +8,15 @@
 
 # path to a directory with all packages
 storage: {{ verdaccio_datadir }}/storage
-
-# path to a directory with plugins to include
-plugins: {{ verdaccio_datadir }}/plugins
+max_body_size: {{ verdaccio_max_body_size }}
 
 web:
   title: {{ verdaccio_web_title }}
   gravatar: {{ verdaccio_web_gravatar }}
   sort_packages: {{ verdaccio_web_sort_packages }}
+
+security:
+  {{ verdaccio_security | to_nice_yaml(width=80, indent=2) | indent(2) }}
 
 auth:
   {{ verdaccio_auth | to_nice_yaml(width=80, indent=2) | indent(2) }}

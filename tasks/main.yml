@@ -10,7 +10,8 @@
   npm:
     name: "{{ item.name }}"
     version: "{{ item.version | default(omit) }}"
-    path: "{{ verdaccio_pluginsdir }}"
+    global: true
+    #path: "{{ verdaccio_pluginsdir }}"
   with_items: "{{ verdaccio_plugins }}"
   when: verdaccio_plugins is not none
 

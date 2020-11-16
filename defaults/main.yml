@@ -8,7 +8,18 @@ verdaccio_plugins:    # Must be a list of name/version for the plugins
 #    version: 4.2.0
 #  - name: verdaccio-groupnames
 #    version: 1.0.4-1
-verdaccio_pluginsdir: "{{verdaccio_datadir}}/plugins"
+verdaccio_max_body_size: 10mb
+verdaccio_security:
+  legacy: false
+  api:
+    jwt:
+      sign:
+        expiresIn: 30d
+        notBefore: 0
+  web:
+    sign:
+      expiresIn: 7d
+      notBefore: 1
 verdaccio_web_title: 'Verdaccio'
 verdaccio_web_gravatar: false
 verdaccio_web_sort_packages: asc
