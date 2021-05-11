@@ -3,6 +3,8 @@ Description=verdaccio Service
 
 [Service]
 Type=simple
+Restart=on-failure
+RestartSec=30
 User=verdaccio
 WorkingDirectory={{ verdaccio_datadir }}
 ExecStart=/usr/bin/verdaccio -c {{ verdaccio_configdir }}/verdaccio.yml
