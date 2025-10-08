@@ -25,5 +25,5 @@ galaxy_info:
     - verdaccio
 dependencies:
   - src: geerlingguy.nodejs
-    version: 6.1.1
+    version: 7.0.0
     name: geerlingguy.nodejs
