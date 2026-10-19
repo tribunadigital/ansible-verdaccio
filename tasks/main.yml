@@ -14,6 +14,7 @@
     #path: "{{ verdaccio_pluginsdir }}"
   with_items: "{{ verdaccio_plugins }}"
   when: verdaccio_plugins is not none
+  notify: restart verdaccio
 
 - name: verdaccio user created
   user:
